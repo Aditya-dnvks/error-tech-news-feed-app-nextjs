@@ -16,9 +16,25 @@ bun dev
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Application Architecture
+The News Feed App is structured as follows:
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+1. **pages/index.tsx:** The entry point of the application.
+2. **components/NewsFeed.tsx:** Contains the NewsFeed component that fetches and displays the news articles.
+3. **components/SwipeButton.tsx:** Contains the SwipeButton component which is a custom swipe control to fetch news.
+4. **public**: Contains static assets such as images.
+   
+## Core Components
+1. **pages/index.tsx:**
+   - Sets up the main container and renders the NewsFeed component.
+2. **components/NewsFeed.tsx:**
+   - Uses SWR for fetching news data from a public API.
+   - Manages the state to display news articles.
+   - Contains the SwipeButton component to trigger news fetching.
+3. **components/SwipeButton.tsx:**
+   - Custom swipe control component.
+   - Handles swipe gestures to trigger news fetch operation.
+
 
 ## Learn More
 
